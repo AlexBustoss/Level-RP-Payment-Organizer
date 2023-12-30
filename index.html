@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organizador de Pagos Level</title>
+  <link rel="icon" type="image/png" href="images/favicon.png"/>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header>
+    <h1>Organizador de Pagos para Level</h1>
+  </header>
+
+  <main>
+    <section id="rp-table-section">
+      <h2>Reservas de Mesas y Pagos</h2>
+      <table id="rps-table">
+        <thead>
+          <tr>
+            <th>RP</th>
+            <th>Mesas</th>
+            <th>Pago($)</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los RP se cargarán aquí dinámicamente -->
+        </tbody>
+      </table>
+    </section>
+
+    <section id="rp-form-section">
+      <form id="rp-form" autocomplete="off">
+        <h2>Agregar/Actualizar RP</h2>
+        <div class="form-group">
+          <label for="rp-name">Nombre del RP:</label>
+          <input type="text" id="rp-name" name="rpName" required>
+        </div>
+        <div class="form-group">
+          <label for="rp-tables">Mesas Reservadas:</label>
+          <input type="number" id="rp-tables" name="rpTables" min="0" required>
+        </div>
+        <div class="form-actions">
+          <button type="submit">Agregar/Actualizar</button>
+          <button type="button" id="rp-reset">Limpiar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
