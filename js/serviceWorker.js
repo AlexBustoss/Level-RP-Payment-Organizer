@@ -1,5 +1,5 @@
 // Nombre del caché
-const CACHE_NAME = 'level-rp-payment-organizer-cache-v3'; // Cambia a v3
+const CACHE_NAME = 'level-rp-payment-organizer-cache-v4'; // Cambia a v4
 // Recursos que queremos que se almacenen en caché
 const urlsToCache = [
   '/',
