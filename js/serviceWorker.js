@@ -2,21 +2,21 @@
 const CACHE_NAME = 'level-rp-payment-organizer-cache-v4'; // Cambia a v4
 // Recursos que queremos que se almacenen en caché
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/css/styles.css',
-  '/js/main.js',
-  '/icons/icon-72x72.png',
-  '/icons/icon-96x96.png',
-  '/icons/icon-128x128.png',
-  '/icons/icon-144x144.png',
-  '/icons/icon-152x152.png',
-  '/icons/icon-192x192.png',
-  '/icons/icon-384x384.png',
-  '/icons/icon-512x512.png',
-  '/icons/icon-120x120.png',
-  '/icons/icon-180x180.png',
-  '/icons/icon-167x167.png'
+  '/Level-RP-Payment-Organizer',
+  '/Level-RP-Payment-Organizer/index.html',
+  '/Level-RP-Payment-Organizer/css/styles.css',
+  '/Level-RP-Payment-Organizer/js/main.js',
+  '/Level-RP-Payment-Organizer/icons/icon-72x72.png',
+  '/Level-RP-Payment-Organizer/icons/icon-96x96.png',
+  '/Level-RP-Payment-Organizer/icons/icon-128x128.png',
+  '/Level-RP-Payment-Organizer/icons/icon-144x144.png',
+  '/Level-RP-Payment-Organizer/icons/icon-152x152.png',
+  '/Level-RP-Payment-Organizer/icons/icon-192x192.png',
+  '/Level-RP-Payment-Organizer/icons/icon-384x384.png',
+  '/Level-RP-Payment-Organizer/icons/icon-512x512.png',
+  '/Level-RP-Payment-Organizer/icons/icon-120x120.png',
+  '/Level-RP-Payment-Organizer/icons/icon-180x180.png',
+  '/Level-RP-Payment-Organizer/icons/icon-167x167.png'
 ];
 
 
