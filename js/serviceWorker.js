@@ -9,6 +9,46 @@ const urlsToCache = [
   // Añadir otros recursos como imágenes, etc.
 ];
 
+// Estrategia de caché para recursos estáticos
+function cacheStaticAssets(request) {
+  return caches.match(request)
+    .then(response => {
+      if (response) {
+        return response;
+      }
+      return fetch(request).then(newResponse => {
+        if (!newResponse || newResponse.status !== 200 || newResponse.type !== 'basic') {
+          return newResponse;
+        }
+        const responseToCache = newResponse.clone();
+        caches.open(CACHE_NAME)
+          .then(cache => {
+            cache.put(request, responseToCache);
+          });
+        return newResponse;
+      });
+    });
+}
+
+// Estrategia de caché para datos dinámicos
+function cacheDynamicData(request) {
+  return fetch(request)
+    .then(response => {
+      if (!response || response.status !== 200 || response.type !== 'basic') {
+        return response;
+      }
+      const responseToCache = response.clone();
+      caches.open(CACHE_NAME)
+        .then(cache => {
+          cache.put(request, responseToCache);
+        });
+      return response;
+    })
+    .catch(() => {
+      return caches.match(request);
+    });
+}
+
 // Instalación del Service Worker y precarga del caché
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -22,19 +62,11 @@ self.addEventListener('install', event => {
 
 // Intercepta las peticiones y devuelve los recursos desde el caché
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // El recurso está en caché, lo devolvemos
-        if (response) {
-          return response;
-        }
+  const request = event.request;
 
-        // Si el recurso no está en caché, intentamos la petición normalmente
-        return fetch(event.request);
-      }
-    )
-  );
+  // Puedes añadir lógica aquí para manejar diferentes tipos de peticiones de manera diferente
+  // Por ejemplo, usar cacheStaticAssets para ciertos tipos de archivos y cacheDynamicData para otros
+  event.respondWith(cacheStaticAssets(request));
 });
 
 // Activación del Service Worker y limpieza de cachés antiguos
