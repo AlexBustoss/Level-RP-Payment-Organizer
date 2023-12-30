@@ -4,7 +4,7 @@
     "icons": [
       {
         "src": "images/LEVELiconoapp.png",
-        "sizes": "512x512",
+        "sizes": "561x577",
         "type": "image/png"
       }
     ],
@@ -14,3 +14,4 @@
     "scope": "/",
     "theme_color": "#4A90E2"
   }
+  
