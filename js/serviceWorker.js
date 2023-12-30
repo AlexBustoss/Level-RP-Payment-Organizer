@@ -1,11 +1,12 @@
 // Nombre del caché
-const CACHE_NAME = 'level-rp-payment-organizer-cache-v1';
+const CACHE_NAME = 'level-rp-payment-organizer-cache-v2'; // Cambia a v2
 // Recursos que queremos que se almacenen en caché
 const urlsToCache = [
   '/',
   '/index.html',
   '/css/styles.css',
   '/js/main.js',
+  '/images/LEVELiconoapp.png'
   // Añadir otros recursos como imágenes, etc.
 ];
 
