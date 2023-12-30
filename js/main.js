@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Registro del Service Worker para hacer la app funcional offline
   if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/serviceWorker.js').then(function(registration) {
+          navigator.serviceWorker.register('/Level-RP-Payment-Organizer/js/serviceWorker.js').then(function(registration) {
               console.log('ServiceWorker registration successful with scope: ', registration.scope);
           }, function(err) {
               console.log('ServiceWorker registration failed: ', err);
